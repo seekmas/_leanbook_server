@@ -1,0 +1,89 @@
+<div class="rich_media_inner">
+  <h2 class="rich_media_title" id="activity-name"><%= @article.subject %></h2>
+  <div class="rich_media_meta_list">
+    <em id="post-date" class="rich_media_meta text">2015-01-05</em>
+    <a class="rich_media_meta link nickname" href="javascript:void(0);" id="post-user">擀霸中国</a>
+  </div>
+  <div id="page-content">
+    <div id="img-content">
+      <div class="rich_media_content" id="js_content">
+
+        <%= image_tag @article.photo(:medium) %>
+
+        <p>
+
+          <%= @article.content.html_safe %>
+        </p>
+      </div>
+
+      <%= @article.preview.html_safe %>
+
+      <div class="rich_media_tool" id="js_toobar">
+        <div id="js_read_area" class="media_tool_meta link_primary meta_primary" style="display:none;">
+          阅读
+          <span id="readNum"></span>
+        </div>
+        <a style="display:none;" class="media_tool_meta meta_primary link_primary meta_praise" href="javascript:void(0);" id="like"> <i class="icon_praise_gray"></i><span class="praise_num" id="likeNum"></span> </a>
+        <a id="js_report_article" class="media_tool_meta link_primary meta_extra" href="javascript:void(0);">举报</a>
+      </div>
+
+      <hr style="color: #E7E8EB;height: 1px;height: 1px;" />
+
+      <%= form_for(@comment) do |f| %>
+          <% if @comment.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+                <ul>
+                  <% @comment.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.text_area :context %>
+          </div>
+
+          <div class="field">
+            <%= f.hidden_field :article_id , :value => @article.id %>
+          </div>
+          <div class="actions">
+            <%= f.submit '留言' %>
+          </div>
+
+      <% end %>
+
+      <hr style="color: #E7E8EB;height: 1px;height: 1px;" />
+
+      <ul>
+          <% @article.comments.each do |c|%>
+            <li>
+
+              <% if c.user %>
+                <%=c.user.email %> :
+
+                  <% else %>
+
+                  匿名游客 :
+              <% end %>
+              <%=c.context%>
+
+            </li>
+          <% end %>
+      </ul>
+
+    </div>
+    <div id="js_bottom_ad_area"></div>
+    <div id="js_iframetest" style="display:none;"></div>
+  </div>
+  <div id="js_pc_qr_code" class="qr_code_pc_outer">
+    <div class="qr_code_pc_inner">
+      <div class="qr_code_pc">
+        <img id="js_pc_qr_code_img" class="qr_code_pc_img" src="http://mp.weixin.qq.com/mp/qrcode?scene=10000004&size=102&__biz=MzAxMjA3NDY0NQ==" />
+        <p>微信扫一扫<br />获得更多内容</p>
+      </div>
+    </div>
+  </div>
+</div>

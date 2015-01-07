@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails leanbook: development" uuid="b3d2180c-c2e0-4b6a-a863-e3888412ff18">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>lean_app.*</schema-pattern>
+      <default-schemas>lean_app.*</default-schemas>
+    </data-source>
+    <data-source name="Rails leanbook: test" uuid="8a3df7bc-ce87-42d3-bf31-46ce9e0a2ebb">
+      <user-name>root</user-name>
+      <user-password>dfc6dfcfdfcbdfc4df92df92df9cdf9c</user-password>
+      <schema-pattern>lean_app_test.*</schema-pattern>
+      <default-schemas>lean_app_test.*</default-schemas>
+    </data-source>
+    <data-source name="Rails leanbook: production" uuid="b8d2cea9-2418-4d9e-b2f1-7c9d15fa20ba">
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfe7dff3dfebdffadffadff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+    </data-source>
+  </component>
+</project>

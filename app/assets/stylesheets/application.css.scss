@@ -1,0 +1,24 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "select2";
+
+
+.float_bar {
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+.float_bar_content {
+  text-align: right;
+  background: #369;
+  height: 30px;
+  position: absolute;
+  top: 0px;
+  left:0px;
+  right:0px;
+  padding: 20px;
+}
+
+.float_bar_content a{
+  color: #ffffff;
+}

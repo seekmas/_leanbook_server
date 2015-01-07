@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leanbook</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag :defaults, "nested_form" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<div class="float_bar">
+    <div class="float_bar_content">
+
+      <% if current_admin %>
+          <%= link_to(current_admin.email + ' 登出', destroy_user_session_path, :method => :delete) %>
+      <% else %>
+          <%= link_to('登入', new_session_path(:admin)) %>
+      <% end %>
+    </div>
+
+</div>
+
+
+
+<div class="container">
+    <%= yield %>
+</div>
+
+<script>
+    $(document).ready(function() {
+
+        $("select").each(function(){
+            $(this).removeClass('form-control');
+        });
+
+
+        $("select").select2();
+
+    });
+</script>
+
+</body>
+</html>
