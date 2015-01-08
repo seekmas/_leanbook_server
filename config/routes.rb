@@ -8,13 +8,14 @@ Rails.application.routes.draw do
 
 
 
-  resources :categories
+
 
   scope '/api' do
 
     resources :comments
     resources :articles
     resources :media
+    resources :categories
 
     match 'comments', to: 'comments#create', via: [:options]
 
@@ -23,6 +24,9 @@ Rails.application.routes.draw do
 
     match 'media', to: 'media#index', via: [:options]
     match 'media/:id', to: 'media#show', via: [:options]
+
+    match 'categories', to: 'categories#index', via: [:options]
+    match 'categories/:id', to: 'categories#show', via: [:options]
 
   end
 
