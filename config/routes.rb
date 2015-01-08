@@ -11,7 +11,6 @@ Rails.application.routes.draw do
 
 
   scope '/api' do
-
     resources :comments
     resources :articles
     resources :media
@@ -28,6 +27,7 @@ Rails.application.routes.draw do
     match 'categories', to: 'categories#index', via: [:options]
     match 'categories/:id', to: 'categories#show', via: [:options]
 
+    get 'articles_by_category/:id' , to: 'articles#find_by_category', via: [:options]
   end
 
 

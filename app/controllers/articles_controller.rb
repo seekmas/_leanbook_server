@@ -49,6 +49,11 @@ class ArticlesController < ApplicationController
   def edit
   end
 
+  def find_by_category
+    @articles = Article.where( :category_id => params[:id]).all
+    puts @articles.inspect
+  end
+
   # POST /articles
   # POST /articles.json
   def create
