@@ -14,12 +14,9 @@
         <%= image_tag @article.photo(:medium) %>
 
         <p>
-
           <%= @article.content.html_safe %>
         </p>
       </div>
-
-      <%= @article.preview.html_safe %>
 
       <div class="rich_media_tool" id="js_toobar">
         <div id="js_read_area" class="media_tool_meta link_primary meta_primary" style="display:none;">
