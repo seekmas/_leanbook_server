@@ -14,10 +14,8 @@
           <%=article.subject%>
             <br/>
 
-          <small><%=article.preview%></small>
+          <small><%= Nokogiri::parse(article.preview).text%></small>
         </h4>
-
-
 
       </div>
 
