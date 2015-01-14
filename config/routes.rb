@@ -31,6 +31,9 @@ Rails.application.routes.draw do
   end
 
 
+  get 'catalog' , to: 'default#catalog'
+
+  get 'catalog/:id' , to: 'default#list_all'
 
 
 

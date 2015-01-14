@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, only: [:index, :edit, :update, :destroy, :new]
 
 
   skip_before_filter :verify_authenticity_token

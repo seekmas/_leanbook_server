@@ -1,5 +1,7 @@
 class MediaController < ApplicationController
   before_action :set_medium, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, only: [:edit, :update, :destroy, :new]
+
 
   skip_before_filter :verify_authenticity_token
   before_filter :cors_preflight_check
